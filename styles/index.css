@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+:root {
+  --bg: #fff;
+  --main-bg: #153e90;
+  --input: #f1f1f1;
+  --input-size: 1.085em;
+  --li-size: 1.02em;
+  --shadow: rgba(255, 255, 255, 0.75);
+  --transparent: rgba(0, 0, 0, 0.1);
+  --suggestion-height: 400px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+  background-color: var(--main-bg);
+  min-height: 75vh;
+}
+
+.container {
+  width: 300px;
+}
+
+.search input {
+  padding: 10px 15px;
+  text-align: center;
+  outline: none;
+  font-size: var(--input-size);
+  background-color: var(--input);
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  --webkit-border-radius: 3px;
+  --moz-border-radius: 3px;
+}
+
+.search input:focus {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
+  transition: all 0.07s linear;
+}
+
+.suggestion {
+  background-color: var(--bg);
+  margin-top: 10px;
+  border-radius: 3px;
+  box-shadow: 0 0 5px var(--shadow);
+  max-height: var(--suggestion-height);
+  overflow-y: scroll;
+}
+
+.suggestion ul {
+  list-style: none;
+  position: relative;
+}
+
+.suggestion ul li {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 25px;
+  background-color: var(--bg);
+  font-size: var(--li-size);
+}
+
+.city::before {
+  content: '';
+  background-image: url(../icons/sweden.png);
+  background-repeat: none;
+  background-position: center;
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 30;
+  left: 0;
+  transform: translateX(2px);
+}
+
+.suggestion ul li:hover {
+  background-color: var(--transparent);
+  cursor: pointer;
+}
+
+.highlight {
+  background-color: rgb(255, 196, 0);
+}
